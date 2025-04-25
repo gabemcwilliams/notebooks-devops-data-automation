@@ -1,0 +1,7 @@
+QUERY:
+  bucket_name: products
+  product: datto_rmm
+  subject: devices
+  source: api
+  start_date: 2024/7/29
+  end_date: 2024/9/29

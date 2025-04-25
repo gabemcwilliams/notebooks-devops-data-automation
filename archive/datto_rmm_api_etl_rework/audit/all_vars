@@ -1,0 +1,51 @@
+// at time of script execution
+
+TIMESTAMPS:
+    # # add marker columns - Stored inside flat file
+    df['_SOURCE_PRODUCT'] = task_config["DETAILS"]["PRODUCT"]
+    df['_SOURCE_SUBJECT'] = task_config["DETAILS"]["SUBJECT"]
+    df['_SOURCE_ORIGIN'] = task_config["ORIGIN"]["TYPE"]
+    df['_UTC_EXTRACTION_DATETIME'] = task_config["TIMESTAMPS"]["_IN_DATA_TIMESTAMP"]
+
+
+// minion
+
+DIRECTION: LOAD # str ["EXTRACT", "TRANSFORM", "LOAD"]
+VAULT:
+  MOUNT_POINT: ""
+  PATH: ""
+BUCKET: products # str bucket name, db name, etc name for root path
+SOURCE_METHOD: api # str sub path below product type for different data origins
+FILE_TYPE: parquet # str file type for object storage
+CLOUD_REGION: local # str region if applicable
+LOGGING:
+  LOCATION:
+  LEVEL:
+
+// postgres configuration
+
+DIRECTION: LOAD # str ["EXTRACT", "TRANSFORM", "LOAD"]
+VAULT:
+  MOUNT_POINT: ""
+  PATH: ""
+DATABASE: products # str database name
+SCHEMA: datto_rmm # str schema name
+TABLE: devices # str table name
+REGION: local # str region if applicable
+LOGGING:
+  LOCATION:
+  LEVEL:
+
+
+// api configuration
+
+DIRECTION: EXTRACT # str ["EXTRACT", "TRANSFORM", "LOAD"]
+VAULT:
+  MOUNT_POINT: ""
+  PATH: ""
+PRODUCT: datto_rmm
+ROUTE: audit # str database name
+REGION: vendor saas # str region if applicable
+LOGGING:
+  LOCATION:
+  LEVEL:

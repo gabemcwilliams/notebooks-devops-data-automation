@@ -1,0 +1,10 @@
+DIRECTION: EXTRACT # str ["EXTRACT", "TRANSFORM", "LOAD"]
+VAULT:
+  MOUNT_POINT: ""
+  PATH: ""
+PRODUCT: datto_rmm
+ROUTE: audit # str database name
+REGION: vendor saas # str region if applicable
+LOGGING:
+  LOCATION:
+  LEVEL:

@@ -1,0 +1,30 @@
+# Must Run in Command Prompt.  Will not work in Powershell!
+
+PS D:\Users\gmcwilliams\Desktop\Remote Activity> cmd
+Microsoft Windows [Version 10.0.14393]
+(c) 2016 Microsoft Corporation. All rights reserved.
+
+D:\Users\gmcwilliams\Desktop\Remote Activity>copy *[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+[REDACTED]/.csv[REDACTED]/.csv
+        1 file(s) copied.

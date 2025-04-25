@@ -1,0 +1,13 @@
+DIRECTION: LOAD # str ["EXTRACT", "TRANSFORM", "LOAD"]
+VAULT:
+  MOUNT_POINT: ""
+  PATH: ""
+BUCKET: products # str bucket name, db name, etc name for root path
+SOURCE_METHOD: api # str sub path below product type for different data origins
+PRODUCT: datto_rmm # str schema name
+ROUTE: devices # str table name
+FILE_TYPE: parquet # str file type for object storage
+REGION: local # str region if applicable
+LOGGING:
+  LOCATION:
+  LEVEL:

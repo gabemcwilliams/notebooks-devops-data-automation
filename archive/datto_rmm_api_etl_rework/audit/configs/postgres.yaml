@@ -1,0 +1,18 @@
+DIRECTION: LOAD # str ["EXTRACT", "TRANSFORM", "LOAD"]
+VAULT:
+  MOUNT_POINT: "localhost"
+  PATH: "postgres/nomad"
+DATABASE: products # str database name
+SCHEMA: datto_rmm # str schema name
+TABLE: devices # str table name
+REGION: local # str region if applicable
+LOGGING:
+  FILE:
+    LOCATION:
+    LEVEL:
+  SYSLOG:
+    LOCATION:
+    LEVEL:
+  STREAM:
+    LOCATION:
+    LEVEL:

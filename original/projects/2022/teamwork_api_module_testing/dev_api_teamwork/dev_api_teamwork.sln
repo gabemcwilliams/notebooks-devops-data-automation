@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{[REDACTED_UUID]}") = "dev_api_teamwork", "dev_api_teamwork\dev_api_teamwork.csproj", "{[REDACTED_UUID]}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{[REDACTED_UUID]}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{[REDACTED_UUID]}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{[REDACTED_UUID]}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{[REDACTED_UUID]}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

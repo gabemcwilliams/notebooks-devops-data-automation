@@ -1,0 +1,126 @@
+#####################################
+#
+#     TASK Configuration File
+#     Created by: Gabe McWilliams
+#     Date: 2023/04/19
+#
+#####################################
+
+ENVIRONMENT: development
+JOB_TITLE: staging_datto_rmm_api_devices
+
+TASKS:
+
+  - POSITION: 0
+    DETAILS:
+      TITLE: API [EXTRACT] - datto_rmm - devices # str 
+      PURPOSE: EXTRACT # str ["EXTRACT", "TRANSFORM", "LOAD"]
+      PRODUCT: datto_rmm # str 
+      SUBJECT: devices # str ie.
+      SCRIPTS: # :list of strings for scripts used
+[REDACTED]/.py
+
+    ORIGIN:
+      TYPE: api #
+      VARS: DATTO_RMM # str api env variable key
+      REGION: concord # str region if applicable
+
+    DESTINATION:
+      TYPE: dataframe # str
+      NAME: df
+
+    DATA:
+      VALIDATION: # str future reference of data validation
+      QUALITY: bronze # str
+
+    LOGGING:
+      LOGS_LOCATION: logs # can be bucket_name or abs(folder path)
+
+
+
+  - POSITION: 1
+    DETAILS:
+      TITLE: DataFrame [TRANSFORM] - datto_rmm - devices # str 
+      PURPOSE: TRANSFORM # str # ETL etc...
+      PRODUCT: datto_rmm # str 
+      SUBJECT: devices # str ie.
+      SCRIPTS:
+[REDACTED]/.py
+
+    ORIGIN:
+      TYPE: dataframe # str
+
+    DESTINATION:
+      TYPE: dataframe # str bucket, db, etc name for root path
+      NAME: df_shaped # str bucket name, db name, etc name for root path
+      PRODUCT: datto_rmm # str 
+      SUBJECT: devices # str ie.
+
+    DATA:
+      VALIDATION: # str future reference of data validation
+      QUALITY: silver # str
+
+    LOGGING:
+      LOGS_LOCATION: logs # can be bucket_name or abs(folder path)
+
+
+  - POSITION: 2
+    DETAILS:
+      TITLE: Minio [LOAD] - datto_rmm - devices # str
+      PURPOSE: LOAD # str ["EXTRACT", "TRANSFORM", "LOAD"]
+      PRODUCT: datto_rmm # str
+      SUBJECT: devices # str ie.
+      SCRIPTS:
+[REDACTED]/.py
+
+    ORIGIN:
+      TYPE: dataframe # str
+
+    DESTINATION:
+      TYPE: localhost # str
+      BUCKET: products # str bucket name, db name, etc name for root path
+      SOURCE_METHOD: api # str sub path below product type for different data origins
+      FILE_TYPE: parquet # str file type for object storage
+      CLOUD_REGION: local # str region if applicable
+      VARS: MINIO
+
+    DATA:
+      VALIDATION: # str future reference of data validation
+      QUALITY: bronze # str
+
+    LOGGING:
+      LOGS_LOCATION: logs # can be bucket_name or abs(folder path)
+
+
+  - POSITION: 3
+    DETAILS:
+      TITLE: Postgres [LOAD] - datto_rmm - devices # str 
+      PURPOSE: LOAD # str # ETL etc...
+      PRODUCT: datto_rmm # str 
+      SUBJECT: devices # str ie.
+      SCRIPTS:
+[REDACTED]/.py
+
+    ORIGIN:
+      TYPE: dataframe # str bucket, db, etc name for root path
+
+    DESTINATION:
+      TYPE: localhost # str
+      DATABASE: products # str database name
+      SCHEMA: datto_rmm # str schema name
+      TABLE: devices # str table name
+      REGION: local # str region
+      VARS: POSTGRES
+
+    DATA:
+      VALIDATION: # str future reference of data validation
+      QUALITY: silver # str
+
+    LOGGING:
+      LOGS_LOCATION: logs # can be bucket_name or abs(folder path)
+
+
+
+
+
+
