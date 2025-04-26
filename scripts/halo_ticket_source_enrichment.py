@@ -1,5 +1,5 @@
 """
-[REDACTED]/.py
+.py
 
 This script extracts ticket data from PostgreSQL using AutoJobs configuration,
 applies entity-level parsing to infer source domains (email, vendor, URL), and
@@ -98,15 +98,15 @@ if __name__ == '__main__':
         # Export unparseable entries
         df_cnp = df_parsed[df_parsed["rootParse"] == "['COULD NOT PARSE']"]
         if not df_cnp.empty:
-            df_cnp.to_csv(f"{root_path}/unparseable_records_{i + 1}[REDACTED]/.csv", index=False)
+            df_cnp.to_csv(f"{root_path}/unparseable_records_{i + 1}.csv", index=False)
 
         # Export root domains
         root_domains = df_parsed["rootParse"].dropna().unique()
-        with open(f"{root_path}/parsed_domains_{i + 1}[REDACTED]/.txt", "w") as f:
+        with open(f"{root_path}/parsed_domains_{i + 1}.txt", "w") as f:
             for root in root_domains:
                 f.write(root + "\n")
 
         # Save enriched DataFrame
-        df_parsed.to_csv(f"{root_path}/enriched_tickets_{i + 1}[REDACTED]/.csv", index=False)
+        df_parsed.to_csv(f"{root_path}/enriched_tickets_{i + 1}.csv", index=False)
 
         print(f"Finished block {i + 1}, parsed {len(df_parsed)} records.\n")

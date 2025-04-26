@@ -41,7 +41,7 @@ months_str = str(months[0]) if len(months) == 1 else '_'.join(map(str, months))
 
 # --- Step 1: Discover Matching Reports ---
 report_files = []
-pattern = re.compile(r"([\w\s]+)\s-\s(\d{4})\s-\s(\d{2})\s-\s([\w\s]+)[REDACTED]/.csv")
+pattern = re.compile(r"([\w\s]+)\s-\s(\d{4})\s-\s(\d{2})\s-\s([\w\s]+).csv")
 
 for root, _, files in os.walk(archive_dir):
     for file in files:
@@ -113,11 +113,11 @@ for report in report_files:
 
 # --- Step 3: Write Summary CSVs ---
 out_df = pd.DataFrame(summary)
-out_path = output_dir / f"{years_str}_{months_str}_{client_match.strip().lower().replace(' ', '_')}[REDACTED]/.csv"
+out_path = output_dir / f"{years_str}_{months_str}_{client_match.strip().lower().replace(' ', '_')}.csv"
 out_df.to_csv(out_path, index=False)
 print(f"[SUMMARY SAVED] → {out_path}")
 
 critical_df = pd.DataFrame(critical_snapshot).drop_duplicates(subset="hostname", keep="last")
-out_crit = output_dir / f"{years_str}_{months_str}_{client_match.strip().lower().replace(' ', '_')}[REDACTED]/.csv"
+out_crit = output_dir / f"{years_str}_{months_str}_{client_match.strip().lower().replace(' ', '_')}.csv"
 critical_df.to_csv(out_crit, index=False)
 print(f"[CRITICAL SERVERS SAVED] → {out_crit}")

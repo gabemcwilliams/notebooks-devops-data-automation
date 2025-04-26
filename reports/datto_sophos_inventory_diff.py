@@ -1,5 +1,5 @@
 """
-[REDACTED]/.py
+.py
 
 Compares device inventory data between Datto RMM and Sophos Central platforms
 by querying their APIs, standardizing key fields, and exporting differences.
@@ -77,7 +77,7 @@ diff = pd.concat([df_datto_shaped, df_sophos_shaped])\
          .drop_duplicates(subset=['siteName', 'hostname'], keep=False, ignore_index=True)
 
 # Export diff CSV
-diff_path = f"{export_folder}datto_sophos_diff_{current_time}[REDACTED]/.csv"
+diff_path = f"{export_folder}datto_sophos_diff_{current_time}.csv"
 diff.to_csv(diff_path, index=False)
 print(f"Exported diff to {diff_path}")
 
@@ -92,6 +92,6 @@ df_test = df_sophos_shaped[df_sophos_shaped['siteName'] == test_site].copy()
 df_test['shapedHostname'] = df_test['hostname'].apply(tell_me_about)
 
 # Export cleaned test site data
-test_export_path = f"{export_folder}[REDACTED]/.csv"
+test_export_path = f"{export_folder}.csv"
 df_test.to_csv(test_export_path, index=False)
 print(f"Exported test site data to {test_export_path}")

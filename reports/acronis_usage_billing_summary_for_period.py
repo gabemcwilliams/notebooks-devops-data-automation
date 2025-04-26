@@ -20,9 +20,9 @@ import datetime as dt
 from pathlib import Path
 
 # --- Configuration ---
-source_file = Path("[REDACTED]/.csv")
-service_map_file = Path("[REDACTED]/.csv")
-output_path = Path("[REDACTED]/.csv")
+source_file = Path(".csv")
+service_map_file = Path(".csv")
+output_path = Path(".csv")
 
 include_internal = True  # Set to False to exclude internal/partner records
 

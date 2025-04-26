@@ -56,7 +56,7 @@ data_set_dir = "d:/data_sets/sprint_financial_reports"
 ### File Locations
 
 sprint_file = f'{data_set_dir}/master_sprint_planning_test_data.xlsx'
-teamwork_file = f'{data_set_dir}[REDACTED]/.csv'
+teamwork_file = f'{data_set_dir}.csv'
 unearned_rev_file = f'{data_set_dir}/Unearned Project Rev 10.31.22.xlsx'
 
 
@@ -78,7 +78,7 @@ class NameShaping:
             df = pd.read_parquet(f'{self.dictionary_source}/standard_client_names.parquet')
             client_rename_dict = {}
             for index, row in df.iterrows():
-                previous_name = row['[REDACTED]']
+                previous_name = row['previousName']
                 current_name = row['currentName']
                 client_rename_dict[previous_name] = current_name
             return client_rename_dict
@@ -619,14 +619,14 @@ df_client_sprint_log = \
 
 df_teamwork_client[
     df_teamwork_client['Resource Name'] == "John Doe"
-    ].to_csv(f'{export_folder}[REDACTED]/.csv', index=False)
+    ].to_csv(f'{export_folder}.csv', index=False)
 
 df_client_sprint_log[
     df_client_sprint_log['Resource Name'] == "John Doe"
-    ].to_csv(f'{export_folder}[REDACTED]/.csv', index=False)
+    ].to_csv(f'{export_folder}.csv', index=False)
 
-df_teamwork_client.to_csv(f"{export_folder}[REDACTED]/.csv", index=False)
-df_teamwork.to_csv(f"{export_folder}[REDACTED]/.csv", index=False)
+df_teamwork_client.to_csv(f"{export_folder}.csv", index=False)
+df_teamwork.to_csv(f"{export_folder}.csv", index=False)
 
-df_client_sprint_log.to_csv(f"{export_folder}[REDACTED]/.csv", index=False)
-df_sprint_log.to_csv(f"{export_folder}[REDACTED]/.csv", index=False)
+df_client_sprint_log.to_csv(f"{export_folder}.csv", index=False)
+df_sprint_log.to_csv(f"{export_folder}.csv", index=False)

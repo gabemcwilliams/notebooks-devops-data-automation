@@ -1,5 +1,5 @@
 """
-[REDACTED]/.py
+.py
 
 This script normalizes software inventory data from Datto RMM using version-stripping regex,
 deduplicates application names, classifies architecture (32-bit vs 64-bit), and prepares
@@ -35,10 +35,10 @@ import pandas as pd
 import re
 
 # Load software inventory CSV
-df = pd.read_csv('[REDACTED]/.csv', dtype_backend='pyarrow')
+df = pd.read_csv('.csv', dtype_backend='pyarrow')
 
 # Load version regex patterns for normalization
-version_keywords_df = pd.read_csv('[REDACTED]/.csv')
+version_keywords_df = pd.read_csv('.csv')
 version_keyword_list = list(version_keywords_df['versionRegex'])
 
 # Normalize software names by removing versions
@@ -68,7 +68,7 @@ software_classified = [
 
 # Export normalized software list
 df_software = pd.DataFrame(software_classified)
-df_software.to_csv('[REDACTED]/.csv', index=False)
+df_software.to_csv('.csv', index=False)
 
 # Optional: explode software metadata from Datto API (pseudocode skeleton)
 # def software_api_req(row):
@@ -88,4 +88,4 @@ df_software.to_csv('[REDACTED]/.csv', index=False)
 # Optional: save fully grouped output by device (not shown here)
 # Can implement with groupby on ['Device Hostname', 'Product'] if needed
 
-print("[REDACTED]/.csv")
+print(".csv")

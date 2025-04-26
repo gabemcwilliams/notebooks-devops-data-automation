@@ -145,10 +145,10 @@ for index, account in enumerate(email_accounts_list[2:]):
 
     if index == 0:
         df = pd.DataFrame(emails_list)
-        df.to_csv(f"{export_folder}/{account['name']}[REDACTED]/.csv", index=False)
+        df.to_csv(f"{export_folder}/{account['name']}.csv", index=False)
     else:
         df_current = pd.DataFrame(emails_list)
-        df_current.to_csv(f"{export_folder}/{account['name']}[REDACTED]/.csv", index=False)
+        df_current.to_csv(f"{export_folder}/{account['name']}.csv", index=False)
         df = pd.concat([df_current, df], ignore_index=True)
 
-df.to_csv(f"{export_folder}[REDACTED]/.csv", index=False)
+df.to_csv(f"{export_folder}.csv", index=False)

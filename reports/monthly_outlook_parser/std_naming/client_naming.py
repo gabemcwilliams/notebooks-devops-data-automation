@@ -12,7 +12,7 @@ import pandas as pd
 
 
 class ClientNameNormalizer:
-    def __init__(self, dictionary_source="./", dictionary_file: str = "[REDACTED]/.csv") -> None:
+    def __init__(self, dictionary_source="./", dictionary_file: str = ".csv") -> None:
         print('\n[Initializing Name Normalizer]\n' + '-' * 20)
 
         self.__dictionary_source = dictionary_source
@@ -50,7 +50,7 @@ class ClientNameNormalizer:
         df = pd.read_csv(f'{self.__dictionary_source}/{self.dictionary_file}', dtype_backend="pyarrow")
         client_rename_dict = {}
         for index, row in df.iterrows():
-            previous_name = row['[REDACTED]']
+            previous_name = row['previousName']
             current_name = row['currentName']
             client_rename_dict[previous_name] = current_name
         return client_rename_dict

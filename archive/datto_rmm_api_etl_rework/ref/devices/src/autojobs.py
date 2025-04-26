@@ -146,7 +146,7 @@ class AutoJobs:
 
                 Stop this job IMMEDIATELY! if this is not the job you are looking for.
 
-                ENVIRONTMENT: {environment}
+                ENVIRONMENT: {environment}
                 """
                 print(message)
                 print("*" * 75)

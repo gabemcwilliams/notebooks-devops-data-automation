@@ -14,7 +14,7 @@ job "datto_rmm_api_monthly_reports_ms_patching" {
 
       config {
         command = "D:/Git/example_infrastructure_data_dev/env/Scripts/python.exe"
-        args    = ["[REDACTED]/.py"]
+        args    = [".py"]
       }
 
       dispatch_payload {

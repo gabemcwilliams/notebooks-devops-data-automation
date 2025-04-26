@@ -17,8 +17,6 @@ TASKS:
       PURPOSE: EXTRACT # str ["EXTRACT", "TRANSFORM", "LOAD"]
       PRODUCT: datto_rmm # str platform or source definition for
       SUBJECT: devices # str ie.
-      SCRIPTS: # :list of strings for scripts used
-[REDACTED]/.py
 
     ORIGIN:
       TYPE: api #
@@ -43,8 +41,6 @@ TASKS:
       PURPOSE: TRANSFORM # str # ETL etc...
       PRODUCT: datto_rmm # str platform or source definition for
       SUBJECT: devices # str ie.
-      SCRIPTS:
-[REDACTED]/.py
 
     ORIGIN:
       TYPE: dataframe # str
@@ -68,8 +64,6 @@ TASKS:
       PURPOSE: TRANSFORM # str # ETL etc...
       PRODUCT: datto_rmm # str platform or source definition for
       SUBJECT: devices # str ie.
-      SCRIPTS:
-[REDACTED]/.py
 
     ORIGIN:
       TYPE: dataframe # str
@@ -94,8 +88,6 @@ TASKS:
       PURPOSE: TRANSFORM # str # ETL etc...
       PRODUCT: datto_rmm # str platform or source definition for
       SUBJECT: devices # str ie.
-      SCRIPTS:
-[REDACTED]/.py
 
     ORIGIN:
       TYPE: dataframe # str

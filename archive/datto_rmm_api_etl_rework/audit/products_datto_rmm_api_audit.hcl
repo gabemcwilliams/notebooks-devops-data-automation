@@ -14,7 +14,7 @@ job "products_datto_rmm_api_audit" {
 
       config {
         command = "C:/automation/venv/Scripts/python.exe"
-        args    = ["[REDACTED]/.py"]
+        args    = [".py"]
       }
 
       dispatch_payload {

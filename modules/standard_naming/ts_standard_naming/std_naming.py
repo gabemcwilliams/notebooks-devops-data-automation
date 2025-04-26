@@ -9,8 +9,8 @@ conventions to clean, analysis-ready formats using CSV-based dictionaries.
 
 Features:
 ---------
-- Rename columns based on a standard naming map (`[REDACTED]/.csv`)
-- Standardize client names using a client mapping file (`[REDACTED]/.csv`)
+- Rename columns based on a standard naming map (`.csv`)
+- Standardize client names using a client mapping file (`.csv`)
 - Apply common rewording for Credit Unions (e.g., "Federal Credit Union" → "FCU")
 - Handle edge case normalization such as “Example CU” style adjustments
 
@@ -38,7 +38,7 @@ class NameShaping:
         # create column_rename_dict
         def __create_column_rename_dict__():
             print('Starting _create_column_rename_dict')
-            df = pd.read_csv(f'{self.dictionary_source}[REDACTED]/.csv')
+            df = pd.read_csv(f'{self.dictionary_source}.csv')
             column_rename_dict = {}
             for index, row in df.iterrows():
                 current_column = row['currentColumn']
@@ -49,10 +49,10 @@ class NameShaping:
         # create client_rename_dict
         def __create_client_rename_dict__():
             print('Starting _create_client_rename_dict')
-            df = pd.read_csv(f'{self.dictionary_source}[REDACTED]/.csv')
+            df = pd.read_csv(f'{self.dictionary_source}.csv')
             client_rename_dict = {}
             for index, row in df.iterrows():
-                previous_name = row['[REDACTED]']
+                previous_name = row['previousName']
                 current_name = row['currentName']
                 client_rename_dict[previous_name] = current_name
             return client_rename_dict

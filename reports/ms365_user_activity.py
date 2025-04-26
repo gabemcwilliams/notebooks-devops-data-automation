@@ -18,7 +18,7 @@ Steps:
 - Requests an OAuth2 access token
 - Fetches up to 365 sign-in audit log entries (first page only)
 - Converts the JSON response to a pandas DataFrame
-- Exports the data to `[REDACTED]/.csv`
+- Exports the data to `.csv`
 
 Limitations:
 ------------
@@ -75,4 +75,4 @@ df = pd.DataFrame(c_dict['value'])
 
 df.head()
 
-df.to_csv('[REDACTED]/.csv', index=False)
+df.to_csv('.csv', index=False)

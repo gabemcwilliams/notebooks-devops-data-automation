@@ -1,0 +1,10 @@
+repos:
+  - repo: local
+    hooks:
+      - id: jupyter-nb-clear-output
+        name: Clear Jupyter Notebook Output
+        entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
+        language: system
+        types: [jupyter]
+        files: \.ipynb$
+        stages: [commit]

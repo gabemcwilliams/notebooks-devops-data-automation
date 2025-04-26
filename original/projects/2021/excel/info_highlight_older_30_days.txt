@@ -1,6 +1,0 @@
-1) Select Use a formula to determine which cells to format option in the Select a Rule Type section;
-2) Enter the below formula into the Format values where this formula is true box;
-
-=c2<TODAY()-30
-
-3) Click the Format button and specify a fill color to highlight the date cells;

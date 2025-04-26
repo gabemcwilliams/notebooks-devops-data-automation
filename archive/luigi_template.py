@@ -1,5 +1,5 @@
 """
-[REDACTED]/.py
+.py
 
 This script was an early experiment with Luigi as an orchestration tool.
 
@@ -24,12 +24,12 @@ class StarWars(luigi.Task):
     Task: Fetch Star Wars character data and save to a JSON file.
     """
     def output(self):
-        return luigi.LocalTarget("[REDACTED]/.json")
+        return luigi.LocalTarget(".json")
 
     def run(self):
         url = "https://swapi.tech/api/people/1"  # Fetching Luke Skywalker data
         response = requests.get(url)
-        content =[REDACTED]/.json()
+        content = response.json()
 
         with self.output().open("w") as f:
             json.dump(content, f, indent=2)
@@ -40,7 +40,7 @@ class TestPrint(luigi.Task):
     Task: Dummy print task (not used in pipeline execution).
     """
     def output(self):
-        return luigi.LocalTarget("[REDACTED]/.txt")
+        return luigi.LocalTarget(".txt")
 
     def run(self):
         with self.output().open("w") as f:

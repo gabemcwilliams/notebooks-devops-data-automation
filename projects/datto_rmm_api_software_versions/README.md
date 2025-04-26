@@ -16,7 +16,7 @@ This script authenticates against the Datto RMM API, extracts all installed soft
   - Microsoft Teams
   - Microsoft Office 365
 - Produces a compliance matrix indicating which devices are current or outdated
-- Exports results to CSV (`[REDACTED]/.csv`)
+- Exports results to CSV (`.csv`)
 
 ## Dependencies
 
@@ -32,7 +32,7 @@ This script authenticates against the Datto RMM API, extracts all installed soft
 ```text
 datto_rmm_software_report/
 │
-├──[REDACTED]/.py    # Main script
+├──.py    # Main script
 ├── README.md                           # This file
 └── dictionaries/
     └── datto_rmm_software_management_report.dict  # Software mapping config
